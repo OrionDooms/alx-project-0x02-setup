@@ -2,6 +2,7 @@ import React, { use, useState }  from "react";
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
 import { CardProps } from "@/interfaces";
+import Header from "@/components/layout/Header";
 
 
 const Home: React.FC = () => {
@@ -17,6 +18,7 @@ const Home: React.FC = () => {
 
 	return (
 	<div className="justify-center items-center flex-col h-screen">
+        <Header />
 		<h1 className="text-4xl font-bold">Home page</h1>
 
         <button onClick={() => setModalOpen(true)}

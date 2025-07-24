@@ -7,8 +7,8 @@ const UserCard: React.FC<UserProps> = ({ name, email, address }) => {
             <h2>{name}</h2>
             <p>{email}</p>
             <div>
-                <p>{address.street}, {address.suite}</p>
-                <p>{address.city}, {address.zipcode}</p>
+                <p>{address.street}, {address.suite}, 
+                    {address.city}, {address.zipcode}</p>
             </div>
         </div>
     );

@@ -1,20 +1,13 @@
 import React, {useEffect, useState} from "react";
 import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
-import {type UserProps} from "@/interfaces";
+import { type UserProps } from "@/interfaces";
 
-const Users: React.FC = () => {
-    const [users, setUsers] = useState<UserProps[]>([]);
+interface UsersPageProps {
+    users: UserProps[];
+}
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            const res = await fetch("https://jsonplaceholder.typicode.com/users");
-            const data = await res.json();
-            setUsers(data);
-        }
-        fetchUsers();
-    }, []);
-
+const Users: React.FC<UsersPageProps> = ({ users}) => {
     return (
         <div>
             <Header />
@@ -25,6 +18,11 @@ const Users: React.FC = () => {
             </div>
         </div>
     );
+};
+export const getStaticProps = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+    const users = await response.json();
 
+    return { props: { users } };
 };
 export default Users;

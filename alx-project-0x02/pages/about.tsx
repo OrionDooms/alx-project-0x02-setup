@@ -8,9 +8,9 @@ const About: React.FC = () => {
             <Header />
             <h1 className="text-4xl font-bold mb-8">About page</h1>
             <div className="flex gap-6 flex-wrap">
-                <Button label="Small Button" size="small" shape="rounded-sm" />
-                <Button label="Medium Button" size="medium" shape="rounded-md" />
-                <Button label="Large Button" size="large" shape="rounded-full" />
+                <Button label="Small Button" size="small" shape="rounded-sm" onClick={() => alert("Large Button Clicked")}/>
+                <Button label="Medium Button" size="medium" shape="rounded-md" onClick={() => alert("Large Button Clicked")}/>
+                <Button label="Large Button" size="large" shape="rounded-full" onClick={() => alert("Large Button Clicked")}/>
             </div>
         </div>
     );
